@@ -6,13 +6,11 @@ pypdf
 bs4
 arxiv
 pymupdf
-wikipedia
 langchain-text-splitters
 langchain-openai
 chromadb
 sentence_transformers
 langchain_huggingface
-faiss-cpu
 langchain_chroma
 duckdb
 pandas
@@ -21,7 +19,6 @@ langchain-groq
 duckduckgo_search==5.3.1b1
 pymupdf
 arxiv
-wikipedia
 mysql-connector-python
 SQLAlchemy
 validators==0.28.1
@@ -30,6 +27,6 @@ unstructured
 pytube
 numexpr
 huggingface_hub
-streamlit
 pydantic
 FastAPI
+uvicorn[standard]

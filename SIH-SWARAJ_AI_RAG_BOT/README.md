@@ -119,3 +119,25 @@ Processes user queries and returns contextual responses from the knowledge base.
 
 See `requirements.txt` for the complete list.
 
+## Docker
+
+Build and run the application inside Docker (recommended for EC2 deployments):
+
+Build the image:
+```bash
+docker build -t swarajdesk-backend:latest .
+```
+
+Run the container (map port 8000):
+```bash
+docker run -p 8000:8000 \
+  -e GROQ_API_KEY=your_groq_key \
+  -e HUGGINGFACEHUB_API_TOKEN=your_hf_token \
+  -v /path/on/host/chroma_store:/app/chroma_store \
+  --name swarajdesk-backend swarajdesk-backend:latest
+```
+
+Notes:
+- Mount a host volume to `/app/chroma_store` so vector DB persists across container restarts.
+- For production consider running behind a process manager or using a multi-worker server.
+
